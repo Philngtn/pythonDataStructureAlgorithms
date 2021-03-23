@@ -31,8 +31,16 @@ class MyArray:
         self.length -= 1
         return lastitem
 
-     
-
+    def delete(self, index):
+        deleteditem = self.data[index]
+        # Shifting the data to one slot
+        for i in range(index, self.length -1):
+            self.data[i] = self.data[i+1]
+        # Delete the last array slot
+        del self.data[self.length - 1]
+        self.length -= 1
+        return deleteditem
+      
 
 newArray = MyArray()
 newArray.push("Hello. ")
@@ -40,5 +48,6 @@ newArray.push("How")
 newArray.push("are")
 newArray.push("you")
 newArray.push("!")
-print(newArray.pop())
+
+newArray.delete(1)
 print(newArray) 
