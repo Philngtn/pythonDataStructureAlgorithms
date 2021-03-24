@@ -54,6 +54,7 @@ def reverse2(string):
     reverse_string = []
 
     for i in range(1, len(string) + 1):
+        # Read the array from the back to front -1 -> -n
         reverse_string.append(string[-i])
     return ''.join(reverse_string)
 
