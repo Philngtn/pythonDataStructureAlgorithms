@@ -60,3 +60,5 @@ def reverse2(string):
 
 print(reverse2(vowels))
 print(reverse2('Hi my name is Phil'))
+
+# or just use reverse2[::-1]
