@@ -11,6 +11,7 @@ class HashTable:
     def _hash(self, key):
         hash = 0
         for i in range(len(key)):
+            # ord() returns the order number of the letter in the ASCII table 
             hash = (hash + ord(key[i]) * i) % self.array_length
             # print(hash)
         return hash
