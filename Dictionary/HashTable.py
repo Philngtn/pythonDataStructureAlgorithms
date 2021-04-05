@@ -6,8 +6,6 @@ class HashTable:
         self.data = [[] for i in range(size)]
         self.array_length = size
 
-
-
     def _hash(self, key):
         hash = 0
         for i in range(len(key)):
@@ -38,10 +36,28 @@ class HashTable:
                     return currentBucket[i][1]
         return None
 
+    def keys(self):
+        keysArray = []
+        for i in self.data:
+            if (bool(i)):
+                # Prevent collision
+                if (len(i) > 1):
+                    for j in i:
+                        keysArray.append(j[0])
+                else: 
+                    keysArray.append(i[0][0])
+        return keysArray
+
 
 hashObj = HashTable(2)
-hashObj.set('grapes',19)
-hashObj.set('grapsdes',1249)
-a = hashObj.get('grapes')
+hashObj.set('Chickenpie',19)
+hashObj.set('Organge',29)
+hashObj.set('Apple',49)
+hashObj.set('Grapes',19)
 
-print(a)
+
+# a = hashObj.get('Grapes')
+b = hashObj.keys()
+
+# print(a)
+print(b)
