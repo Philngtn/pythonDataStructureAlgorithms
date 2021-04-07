@@ -15,7 +15,7 @@ def first_recurring_char(arr):
             return i
 
     # Time complexity O(2n)
-    # Space complexity 0(n)
+    # Space complexity O(n)
     
     return None
 
