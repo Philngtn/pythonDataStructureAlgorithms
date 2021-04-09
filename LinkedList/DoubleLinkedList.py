@@ -4,8 +4,6 @@
 # Author : Phuc Nguyen (Philngtn)
 # # # # # # # # # # # # # # # # # # # # # # # #
 
-# 10 - 20 - a - 30 - 40 
-
 from typing import NoReturn
 
 

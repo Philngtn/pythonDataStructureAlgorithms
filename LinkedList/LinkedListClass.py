@@ -5,6 +5,9 @@
 # # # # # # # # # # # # # # # # # # # # # # # #
 
 
+from typing import NoReturn
+
+
 class Node:
     def __init__(self, data):
         self.value = data
@@ -92,6 +95,28 @@ class LinkedList:
                 self.length -= 1
                 return 0
 
+
+    def reverse(self):
+        temp = self.head
+        # set the tail at the beginning
+        self.tail = self.head
+        temp2 = temp.next
+
+        if (self.length == 0):
+            return "Empty list"
+        if (self.length == 1):
+            return 0
+        while (temp2 != None):
+           temp3  = temp2.next
+           temp2.next = temp 
+           temp = temp2
+           temp2 = temp3
+
+        self.head.next = None
+        # set the head at the end of reverse list
+        self.head = temp
+
+
     def printList(self):
         temp = self.head
         while temp != None:
@@ -116,6 +141,9 @@ myLinkedList.insert(1,4)
 
 myLinkedList.remove(4)
 myLinkedList.remove(99)
+myLinkedList.printList()
+
+myLinkedList.reverse()
 
 myLinkedList.printList()
 
