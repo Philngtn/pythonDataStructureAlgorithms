@@ -1,5 +1,9 @@
+# # # # # # # # # # # # # # # # # # # # # # # # 
+# Python 3 data structure practice 
+# Chap 2: Dictionaries
+# Author : Phuc Nguyen (Philngtn)
+# # # # # # # # # # # # # # # # # # # # # # # #
 from typing import Sized
-
 
 class HashTable:
     def __init__(self, size):

@@ -1,3 +1,9 @@
+# # # # # # # # # # # # # # # # # # # # # # # # 
+# Python 3 data structure practice 
+# Chap 2: Dictionaries
+# Author : Phuc Nguyen (Philngtn)
+# # # # # # # # # # # # # # # # # # # # # # # #
+
 def first_recurring_char(arr):
     # Declare an empty dictionary 
     map = {}

@@ -1,3 +1,10 @@
+# # # # # # # # # # # # # # # # # # # # # # # # 
+# Python 3 data structure practice 
+# Chap 3: Linked List
+# Author : Phuc Nguyen (Philngtn)
+# # # # # # # # # # # # # # # # # # # # # # # #
+
+
 class Node:
     def __init__(self, data):
         self.value = data
@@ -45,6 +52,13 @@ class LinkedList:
         temp = self.head
         count = 0
         
+        if (self.length == 0):    
+            self.head = newNode
+            self.tail = self.head
+            self.length += 1
+            return 0
+
+
         while (True):
             if location > self.length:
                 self.append(value)
@@ -67,7 +81,7 @@ class LinkedList:
         count = 0
         while(True):
             if location > self.length or location < 0:
-                return print("Location should be within length: " + str(self.length))
+                return print("Error: location should be within length: " + str(self.length))
             if (count != (location-1)):
                 temp = temp.next
                 count += 1
@@ -100,8 +114,8 @@ myLinkedList.insert(1,22)
 myLinkedList.insert(42,0)
 myLinkedList.insert(1,4)
 
+myLinkedList.remove(4)
 myLinkedList.remove(99)
-
 
 myLinkedList.printList()
 

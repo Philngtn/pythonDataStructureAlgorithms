@@ -1,6 +1,6 @@
 # # # # # # # # # # # # # # # # # # # # # # # # 
 # Python 3 data structure practice 
-# Chap 1: Dictionaries
+# Chap 2: Dictionaries
 # Author : Phuc Nguyen (Philngtn)
 # # # # # # # # # # # # # # # # # # # # # # # #
 
