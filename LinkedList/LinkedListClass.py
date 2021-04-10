@@ -141,9 +141,12 @@ myLinkedList.insert(1,4)
 
 myLinkedList.remove(4)
 myLinkedList.remove(99)
+
+print("--------------------")
+print("Linklist:")
 myLinkedList.printList()
-
+print("--------------------")
+print("Revered Linklist:")
 myLinkedList.reverse()
-
 myLinkedList.printList()
 
