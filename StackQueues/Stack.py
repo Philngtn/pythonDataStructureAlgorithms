@@ -72,3 +72,7 @@ print("Pop 3 elements from the stack: ")
 newStack.pop()
 newStack.pop()
 newStack.pop()
+
+print("Check stack: ")
+
+newStack.pop()
