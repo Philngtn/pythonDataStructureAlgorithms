@@ -29,34 +29,30 @@ class Stack:
         if (self.length == 0):
             self.top = new_node
             self.bottom = new_node
-            self.length += 1
         else:
             temp = self.top
             self.top = new_node
-            temp.next = new_node
-            self.length += 1
+            self.top.next = temp
+
+        self.length +=1
+        return print(new_node.value)   
 
     def pop(self):
-        temp = self.bottom
-
-        if(self.length == 0):
-            return print("Empty stack")
-
-        if(temp == self.top):
-            self.length -= 1
-            self.top = None
+        if (self.length == 0):
+            return print("Stack Empty")
+    
+        if (self.bottom == self.top):
+            temp = self.top
             self.bottom = None
+            self.top = None
+            self.length -= 1
             return print(temp.value)
 
-        while(True):
-            if(temp.next != self.top):
-                temp = temp.next
-            else:
-                return_value = temp.next
-                self.top = temp
-                self.length -= 1
-                return print(return_value.value)
-        
+        temp = self.top
+        self.top = self.top.next
+        self.length -=1
+
+        return print(temp.value)
 
 
 
