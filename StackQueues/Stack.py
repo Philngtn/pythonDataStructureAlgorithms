@@ -35,7 +35,7 @@ class Stack:
             self.top.next = temp
 
         self.length +=1
-        return print(new_node.value)   
+        return print("Push into Stack: ",new_node.value)   
 
     def pop(self):
         if (self.length == 0):
@@ -52,27 +52,27 @@ class Stack:
         self.top = self.top.next
         self.length -=1
 
-        return print(temp.value)
+        return print("Pop from Stack: ",temp.value)
 
 
 
-newStack = Stack()
+# newStack = Stack()
 
-print("Adding Goolge and Testla into the stack: ")
-newStack.push("Google")
-newStack.push("Tesla")    
+# print("Adding Goolge and Testla into the stack: ")
+# newStack.push("Google")
+# newStack.push("Tesla")    
 
-print("Showing the top element: ")
-newStack.peek()
+# print("Showing the top element: ")
+# newStack.peek()
 
-print("Adding SpaceX into the stack: ")
-newStack.push("SpaceX")
+# print("Adding SpaceX into the stack: ")
+# newStack.push("SpaceX")
 
-print("Pop 3 elements from the stack: ")
-newStack.pop()
-newStack.pop()
-newStack.pop()
+# print("Pop 3 elements from the stack: ")
+# newStack.pop()
+# newStack.pop()
+# newStack.pop()
 
-print("Check stack: ")
+# print("Check stack: ")
 
-newStack.pop()
+# newStack.pop()
