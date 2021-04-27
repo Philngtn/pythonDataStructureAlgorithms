@@ -62,6 +62,7 @@ class BinarySeachTree:
         return print("Found nothing")
             
     def remove(self,value):
+
         if (not self.root):
             return print("Empty Tree")
         
@@ -89,18 +90,53 @@ class BinarySeachTree:
                         # make current LEFT child as parent's RIGHT child (NO RIGHT CHILD CASE) 
                         if (current_node.value < parent_node.value):
                             parent_node.left = current_node.left
-                        # Left side, if parent < current value  
+                        # Right side, if parent < current value  
                         # make current LEFT child as parent's RIGHT child (NO RIGHT CHILD CASE)
                         elif (current_node.value > parent_node.value):
                             parent_node.right = current_node.left
-                            
+                    
                 # Option 2: Right child does't have a left child 
                 elif (current_node.right.left == None):
+                    current_node.right.left = current_node.left
                     if (parent_node == None):
+                        # Take left node as the root node 
+                        self.root = current_node.left
+                    else:
+                        # Take the left empty space of the child (Option 2)
+                        #  and put the LEFT node of current node
+                        
+                        # Left side, make right child of the left parent
+                        if (current_node.value < parent_node.value):
+                            parent_node.left = current_node.right
+                        # 
+                        elif (current_node.value > parent_node.value):
+                            parent_node.right = current_node.right
+                
+                # Option 3: Right child that has a left child 
+                else:
+                    # Find the Right child's left most child
+                    leftMost = current_node.right.left
+                    leftMostParent = current_node.right
+                    while (leftMost.left != None ):
+                        leftMostParent = leftMost
+                        leftMost = leftMost.left
 
+                    leftMostParent.left = leftMost.right
+                    leftMost.left = current_node.left
+                    leftMost.right = current_node.right
 
-                    
+                    if (parent_node == None):
+                        self.root = leftMost
+                    else:
+                        if(current_node.value < parent_node.value):
+                            parent_node.left = leftMost
+                        elif (current_node.value > parent_node.value):
+                            parent_node.right = leftMost
 
+                
+                return True
+           
+           
 
     def print_tree(self):
         if self.root != None:
@@ -122,6 +158,6 @@ tree.insert(650)
 tree.insert(34)
 tree.insert(40)
 
-print(tree.lookup(34))
+tree.remove(40)
 
 tree.print_tree()
