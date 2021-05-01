@@ -22,6 +22,7 @@ class MaxHeap:
             temp  = self.heap[self.parent(i)]
             self.heap[self.parent(i)] = self.heap[i]
             self.heap[i] = temp
+            # Recursive swap up 
             self.swap_up(self.parent(i))
         return True
 
@@ -30,6 +31,11 @@ class MaxHeap:
         index = self.size_heap() - 1
         self.swap_up(index)
 
+    def top(self):
+        if len(self.heap) == 0:
+            return print("Empty Heap")
+        return self.heap[0]
+
 
 max_heap = MaxHeap()
 
@@ -37,6 +43,8 @@ max_heap.push(3)
 max_heap.push(5)
 max_heap.push(4)
 max_heap.push(24)
+max_heap.push(244)
+max_heap.push(22222)
 
 print(max_heap.heap)
 
