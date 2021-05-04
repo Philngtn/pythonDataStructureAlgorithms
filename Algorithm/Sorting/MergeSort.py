@@ -22,7 +22,8 @@ def merge(left, right):
         elif (left[i] < right[j]):
             merge_array.append(left[i])
             i +=1
-    # Add the remainding of the LEFT or RIGHT array (1 array has nothing since we reaches it end)
+    # Add the remainning of the LEFT or RIGHT array (1 array has nothing since we reaches it end)
+    # This is for the case of non even arrays
     merge_array.extend(left[i:])
     merge_array.extend(right[j:])
 
