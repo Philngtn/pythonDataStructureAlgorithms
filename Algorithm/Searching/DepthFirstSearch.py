@@ -1,6 +1,3 @@
-from typing import NoReturn
-
-
 class Node:
 
     def __init__(self,value):
@@ -10,7 +7,6 @@ class Node:
     
     def __str__(self):  
         return str(self.__dict__)
-
 
 class BinarySeachTree:
 
@@ -133,32 +129,50 @@ class BinarySeachTree:
                 
                 return True
 
-    def breadthFirstSearch(self):
-        current_node = self.root
-        list_node = []
-        queue = []
-        queue.append(current_node)
-        while len(queue) > 0:
-            current_node = queue.pop()
-            list_node.append(current_node.value)
-            if(current_node.left):
-                queue.append(current_node.left)
-            if(current_node.right):
-                queue.append(current_node.right)
+# InOrder - [1,4,6,9,15,20,170]
+# PreOrder - [9,4,1,6,20,15,170]
+# PostOrder - [1,6,4,15,170,20,9]
+#                  9
+#          4              20
+#      1      6       15       170
 
-        return print(list_node)
+    def traverse_InOrder(self, node, list_node):
+        # Searching left node
+        if node.left:
+            self.traverse_InOrder(node.left , list_node)
+        # if not have left node, add to the list
+        list_node.append(node.value)
+        # Check whether the current node has a right node -> call the function to seach the 
+        # left node in this current right node 
+        if node.right:
+            self.traverse_InOrder(node.right , list_node)
+        # If does not have any branch -> return the list
+        return list_node
 
-    def breadthFirstSearchRecursive(self, queue, list):
-        if len(queue) == 0:
-            return print(list)
-        current_node = queue.pop()
-        list.append(current_node.value)
-        if current_node.left:
-            queue.append(current_node.left)
-        if current_node.right:
-            queue.append(current_node.right)
-            
-        return self.breadthFirstSearchRecursive(queue, list)
+    def traverse_PreOrder(self, node, list_node):
+        list_node.append(node.value)
+        if node.left:
+            self.traverse_PreOrder(node.left, list_node)
+        if node.right:
+            self.traverse_PreOrder(node.right, list_node)
+        return list_node
+    
+    def traverse_PostOrder(self, node, list_node):
+        if node.left:
+            self.traverse_PostOrder(node.left, list_node)
+        if node.right:
+            self.traverse_PostOrder(node.right, list_node)
+        list_node.append(node.value)
+        return list_node
+
+    def DepthFirstSearch_InOrder(self):
+        return print(self.traverse_InOrder(self.root, []))
+
+    def DepthFirstSearch_PreOrder(self):
+        return print(self.traverse_PreOrder(self.root, []))
+
+    def DepthFirstSearch_PostOrder(self):
+        return print(self.traverse_PostOrder(self.root, []))
 
 
 tree = BinarySeachTree()
@@ -170,11 +184,7 @@ tree.insert(1)
 tree.insert(6)
 tree.insert(15)
 tree.insert(170)
-tree.insert(40)
 
-tree.breadthFirstSearch()
-tree.remove(40)
-
-
-tree.breadthFirstSearch()
-tree.breadthFirstSearchRecursive([tree.root], [])
+tree.DepthFirstSearch_InOrder()
+tree.DepthFirstSearch_PreOrder()
+tree.DepthFirstSearch_PostOrder()
