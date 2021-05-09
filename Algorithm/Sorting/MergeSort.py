@@ -14,7 +14,7 @@ def merge(left, right):
 
     i = j = 0
 
-    # AND condition means loop stop when an array reaches it end
+    # AND condition means loop stop when AN array reaches it end
     while(i < len(left) and j < len(right)):
         if (left[i] > right[j]):
             merge_array.append(right[j])
