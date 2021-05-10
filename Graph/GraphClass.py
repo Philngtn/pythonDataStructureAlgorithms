@@ -10,8 +10,6 @@ class Graph:
         self.adjacent_list[node] = []
         self.number_of_node += 1
 
-    
-
     def add_edge(self, node1, node2):
         if node1 not in self.adjacent_list:
             return print(str(node1) + " is not in the list")
