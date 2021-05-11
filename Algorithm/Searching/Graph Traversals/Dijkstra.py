@@ -138,8 +138,6 @@ class Graph_undirected_weighted:
     
         return shortest_path
 
-        
-
 
 graph = Graph_undirected_weighted()
 # print("Add nodes")
