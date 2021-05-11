@@ -101,7 +101,8 @@ class Graph_undirected_weighted:
             unvisited.remove(current_vertex)
 
         return table
-    
+
+    # Visualized the matrix with labeled node in alphabel
     def visualize_matrix(self, visualize_matrix):
         alphabet = list(map(chr,range(65, 65 + self.number_of_node)))
         for i in visualize_matrix:
@@ -135,7 +136,6 @@ class Graph_undirected_weighted:
         # Print the shortest path backward from START - END
         print(shortest_path[::-1])
     
-        
         return shortest_path
 
         
