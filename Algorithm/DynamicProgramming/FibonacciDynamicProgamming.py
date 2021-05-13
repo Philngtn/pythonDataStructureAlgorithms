@@ -1,4 +1,4 @@
-
+import timeit
 
 count = 0 
 
@@ -29,8 +29,16 @@ def fibonacciDynamic():
 
 
 
-print(fibonacci(7))
-print(count)
-
 refFibo = fibonacciDynamic()
-print(refFibo(8))
+
+# print(count)
+
+starttime = timeit.default_timer()
+print(fibonacci(30))
+print("The time of normal Fibo is :", timeit.default_timer() - starttime)
+
+starttime = timeit.default_timer()
+print(refFibo(30))
+print("The time of dynamic Fibo is :", timeit.default_timer() - starttime)
+
+
