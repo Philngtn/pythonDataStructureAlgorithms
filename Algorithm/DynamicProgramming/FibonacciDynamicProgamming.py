@@ -26,6 +26,12 @@ def fibonacciDynamic():
 
     return fib
 
+def fibonacciDynamic2(n):
+    answer = [0,1]
+    for i in range(2,n+1):
+        answer.append(answer[i-1] + answer[i-2])
+    
+    return answer.pop(-1)
 
 
 
@@ -39,6 +45,10 @@ print("The time of normal Fibo is :", timeit.default_timer() - starttime)
 
 starttime = timeit.default_timer()
 print(refFibo(30))
+print("The time of dynamic Fibo is :", timeit.default_timer() - starttime)
+
+starttime = timeit.default_timer()
+print(fibonacciDynamic2(30))
 print("The time of dynamic Fibo is :", timeit.default_timer() - starttime)
 
 
