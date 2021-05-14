@@ -22,4 +22,6 @@
 - Graph Traversals
   - BFS
   - DFS
+  - Dijkstra Algorithm
 - Dynamic Programming
+  - Cache implementation
